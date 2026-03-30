@@ -361,6 +361,14 @@ body{font-family:'Jost',sans-serif;background:var(--dark);color:var(--text-light
       <div class="medica-desc">Especialista em odontologia estética com foco em lentes de contato dental e planejamento de sorriso. Atendimento humanizado e personalizado para cada paciente.</div>
     </div>
   </div>
+    <div class="medica-avatar"><img src="lidiane.jpg" alt="Dra. Lidiane"></div>
+    <div>
+      <div class="medica-name">Dra. Lidiane</div>
+      <div class="medica-role">ESPECIALISTA · INSTITUTO MASET</div>
+      <div class="medica-desc">Cirurgiã-dentista especializada em canal, coroas e cirurgias orais. Atendimento focado na eliminação da dor, recuperação da função e soluções definitivas para sua saúde bucal, com segurança e acompanhamento personalizado.</div>
+    </div>
+  </div> 
+  </div>
 </section>
 
 <!-- DEPOIMENTOS -->
