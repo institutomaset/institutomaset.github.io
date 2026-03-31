@@ -151,138 +151,126 @@ body{font-family:'Jost',sans-serif;background:var(--dark);color:var(--text-light
   <div class="hero-note">ATENDIMENTO DE SEGUNDA A SÁBADO · PIRASSUNUNGA/SP</div>
 </section>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Instituto Maset</title>
+<!-- FOTOS DA CLÍNICA -->
+<div class="container" style="border-bottom:0.5px solid rgba(201,169,110,0.1);">
 
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #0f0f0f;
-      color: #fff;
+    .clinica-fotos {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      padding-bottom: 20px;
     }
 
-    .galeria {
+    /* FOTO PRINCIPAL */
+    .clinica-topo {
       width: 100%;
-      max-width: 1100px;
-      margin: 40px auto;
-      padding: 0 16px; /* segue o padrão de respiro do site */
-      box-sizing: border-box;
-    }
-
-    .imagem-principal {
-      width: 100%;
-      height: 380px;
+      height: 260px;
+      border-radius: 10px;
       overflow: hidden;
-      border-radius: 12px;
-      margin-bottom: 16px;
       position: relative;
     }
 
-    .imagem-principal img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.4s ease;
-    }
-
-    .imagem-principal:hover img {
-      transform: scale(1.05);
-    }
-
-    .miniaturas {
+    /* GRID DAS 2 IMAGENS */
+    .clinica-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 12px; /* espaço mínimo elegante entre as duas */
+      gap: 12px;
       width: 100%;
     }
 
-    .mini {
-      height: 160px;
-      border-radius: 12px;
-      overflow: hidden;
+    .clinica-foto {
       position: relative;
-      cursor: pointer;
+      overflow: hidden;
+      border-radius: 10px;
+      height: 180px;
     }
 
-    .mini img {
+    .clinica-fotos img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.4s ease, filter 0.4s ease;
+      display: block;
+      transition: transform 0.5s ease, filter 0.5s ease;
     }
 
-    .mini::after {
+    /* OVERLAY */
+    .clinica-foto::after,
+    .clinica-topo::after {
       content: "";
       position: absolute;
       inset: 0;
-      background: rgba(0,0,0,0.3);
+      background: rgba(0,0,0,0.25);
       opacity: 0;
-      transition: opacity 0.4s ease;
+      transition: 0.4s;
     }
 
-    .mini:hover img {
-      transform: scale(1.08);
-      filter: brightness(0.8);
-    }
-
-    .mini:hover::after {
-      opacity: 1;
-    }
-
-    .mini span {
+    /* TEXTO */
+    .clinica-foto span {
       position: absolute;
       bottom: 12px;
-      left: 16px;
-      font-size: 14px;
-      letter-spacing: 1px;
+      left: 12px;
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      color: #fff;
       opacity: 0;
-      transition: opacity 0.4s ease;
+      transform: translateY(10px);
+      transition: 0.4s;
     }
 
-    .mini:hover span {
+    /* HOVER */
+    .clinica-foto:hover img,
+    .clinica-topo:hover img {
+      transform: scale(1.06);
+      filter: brightness(0.9);
+    }
+
+    .clinica-foto:hover::after,
+    .clinica-topo:hover::after {
       opacity: 1;
     }
 
+    .clinica-foto:hover span {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* RESPONSIVO */
     @media (max-width: 768px) {
-      .imagem-principal {
-        height: 250px;
+      .clinica-topo {
+        height: 200px;
       }
 
-      .mini {
-        height: 120px;
+      .clinica-foto {
+        height: 140px;
       }
     }
   </style>
-</head>
 
-<body>
+  <div class="clinica-fotos">
 
-  <section class="galeria">
-
-    <div class="imagem-principal">
-      <img src="fachada.png" alt="Fachada">
+    <!-- FOTO PRINCIPAL -->
+    <div class="clinica-topo">
+      <img src="fachada.jpg" alt="Fachada da Clínica Instituto Maset">
     </div>
 
-    <div class="miniaturas">
+    <!-- DUAS IMAGENS ABAIXO -->
+    <div class="clinica-grid">
 
-      <div class="mini">
-        <img src="sala.png" alt="Sala">
-        <span>Consultório</span>
+      <div class="clinica-foto">
+        <img src="recepcao.jpeg" alt="Recepção">
+        <span>RECEPÇÃO</span>
       </div>
 
-      <div class="mini">
-        <img src="recepcao.png" alt="Recepção">
-        <span>Recepção</span>
+      <div class="clinica-foto">
+        <img src="sala.png" alt="Sala de Atendimento">
+        <span>SALA DE ATENDIMENTO</span>
       </div>
 
     </div>
 
-  </section>
-
-</body>
+  </div>
+</div>
 
 <!-- PROCEDIMENTOS -->
 <section class="sec">
