@@ -89,9 +89,10 @@ body{font-family:'Jost',sans-serif;background:var(--dark);color:var(--text-light
 .wpp-text{font-size:13px;font-weight:500;color:#fff;}
 .wpp-sub{font-size:11px;color:rgba(255,255,255,0.65);}
 .footer{padding:28px 24px;text-align:center;border-top:0.5px solid rgba(201,169,110,0.15);}
-
 .footer-info{font-size:13px;color:var(--text-faint);line-height:1.8;letter-spacing:0.5px;}
 .footer-line{width:24px;height:0.5px;background:rgba(201,169,110,0.3);margin:12px auto;}
+.wpp-fixo{position:fixed;bottom:20px;right:20px;width:52px;height:52px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,0.4);z-index:200;text-decoration:none;transition:transform 0.2s;}
+.wpp-fixo:hover{transform:scale(1.08);}
 
 /* ── Video Testimonial ────────────────────────────── */
 .video-wrap{position:relative;width:100%;background:#000;border:0.5px solid rgba(201,169,110,0.2);border-radius:2px;overflow:hidden;}
@@ -355,12 +356,13 @@ body{font-family:'Jost',sans-serif;background:var(--dark);color:var(--text-light
 </a>
 
 <script>
+function toggleFaq(el){var item=el.parentElement;item.classList.toggle('open');}
 function submitForm(){
   var nome=document.getElementById('nome').value;
   var tel=document.getElementById('tel').value;
-  var interesse=document.getElementById('interesse').value;
+  var motivo=document.getElementById('motivo').value;
   if(!nome||!tel){alert('Por favor, preencha nome e WhatsApp.');return;}
-  var msg='Olá! Me chamo '+nome+'. Vim pelo site e quero agendar uma consulta.'+(interesse?' Tenho interesse em: '+interesse:'');
+  var msg='Olá! Me chamo '+nome+'. Vim pelo site e quero agendar minha consulta de planejamento de sorriso.'+(motivo?' Minha principal queixa: '+motivo:'');
   window.open('https://wa.me/5519999337495?text='+encodeURIComponent(msg),'_blank');
 }
 </script>
